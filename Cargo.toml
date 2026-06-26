@@ -2,6 +2,7 @@
 name = "coorl"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/koss-lebedev/coorl"
 
 [[bin]]
 name = "coorl"
@@ -12,3 +13,8 @@ wreq      = "=6.0.0-rc.29"
 wreq-util = { version = "=3.0.0-rc.13", features = ["emulation"] }
 clap      = { version = "4", features = ["derive"] }
 tokio     = { version = "1", features = ["full"] }
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
