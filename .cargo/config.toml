@@ -1,0 +1,5 @@
+# BoringSSL (btls-sys) on macOS 26 requires explicit C++ header paths.
+# CommandLineTools ships C++ headers in the versioned SDK, not the symlinked MacOSX.sdk.
+[env]
+CXXFLAGS = "-I/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include"
+MACOSX_DEPLOYMENT_TARGET = "15.4"
