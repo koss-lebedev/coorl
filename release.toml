@@ -1,4 +1,3 @@
-[options]
 pre-release-commit-message = "chore: release {{version}}"
 tag-message = "v{{version}}"
 push = true
