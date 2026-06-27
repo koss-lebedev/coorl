@@ -1,7 +1,5 @@
 ![coorl](banner.png)
 
-# coorl: curl pretending to be Chrome
-
 A curl-compatible HTTP client that sends requests with a **Chrome TLS fingerprint** instead of the default OpenSSL one.
 
 ## The problem
@@ -12,12 +10,12 @@ Many sites and APIs detect and block automated HTTP clients by inspecting the TL
 
 Download the latest binary for your platform from the [releases page](https://github.com/koss-lebedev/coorl/releases):
 
-| Platform | Download |
-| -------- | -------- |
-| macOS (Apple Silicon) | `coorl-aarch64-apple-darwin.tar.gz` |
-| macOS (Intel) | `coorl-x86_64-apple-darwin.tar.gz` |
-| Linux (arm64) | `coorl-aarch64-unknown-linux-gnu.tar.gz` |
-| Linux (x86_64) | `coorl-x86_64-unknown-linux-gnu.tar.gz` |
+| Platform              | Download                                 |
+| --------------------- | ---------------------------------------- |
+| macOS (Apple Silicon) | `coorl-aarch64-apple-darwin.tar.gz`      |
+| macOS (Intel)         | `coorl-x86_64-apple-darwin.tar.gz`       |
+| Linux (arm64)         | `coorl-aarch64-unknown-linux-gnu.tar.gz` |
+| Linux (x86_64)        | `coorl-x86_64-unknown-linux-gnu.tar.gz`  |
 
 Extract and place the `coorl` binary somewhere on your `$PATH`.
 
