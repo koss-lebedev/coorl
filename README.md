@@ -63,6 +63,36 @@ coorl -v https://httpbin.org/get
 coorl -b "session=abc123; theme=dark" https://httpbin.org/cookies
 ```
 
+## Verifying the fingerprint
+
+You can confirm the fingerprint difference using [tls.peet.ws](https://tls.peet.ws), which echoes back the JA3/JA4 hashes of the TLS handshake it received.
+
+With standard `curl`, the handshake is plainly an OpenSSL client:
+
+```sh
+curl -s https://tls.peet.ws/api/all | jq '.tls | {ja3_hash, ja4}'
+```
+
+```json
+{
+  "ja3_hash": "375c6162a492dfbf2795909110ce8424",
+  "ja4": "t13d497h2_0d8feac7bc37_7395dae3b2f3"
+}
+```
+
+With `coorl`, the same request produces Chrome's fingerprint instead:
+
+```sh
+coorl -s https://tls.peet.ws/api/all | jq '.tls | {ja3_hash, ja4}'
+```
+
+```json
+{
+  "ja3_hash": "64f2443ea70fee8e38a10c68fd299e49",
+  "ja4": "t13d1516h2_8daaf6152771_d8a2da3f94cd"
+}
+```
+
 ## Exit codes
 
 | Code | Meaning               |
